@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import type { FormEvent } from 'react'
+import { useState, FormEvent } from 'react'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -10,80 +9,72 @@ export default function Contact() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    const form = e.currentTarget
-    const data = new FormData(form)
+    const data = new FormData(e.currentTarget)
     try {
       await fetch('https://formspree.io/f/placeholder', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        method: 'POST', body: data, headers: { Accept: 'application/json' },
       })
-    } catch (_) {
-      // show success regardless for placeholder
-    }
+    } catch (_) {}
     setLoading(false)
     setSubmitted(true)
   }
 
   return (
-    <div className="pt-16">
+    <div style={{ background: '#07061A', minHeight: '100vh' }}>
+
+      {/* Ambient orb */}
+      <div className="fixed pointer-events-none" style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(83,74,183,0.08) 0%, transparent 70%)', top: '20%', right: '-100px', filter: 'blur(100px)', zIndex: 0 }} />
+
       {/* HERO */}
-      <section className="py-16 px-6 bg-white text-center">
+      <section className="relative pt-40 pb-16 px-6 text-center z-10">
         <div className="max-w-[600px] mx-auto">
-          <h1 className="text-4xl font-bold mb-4" style={{ color: '#26215C' }}>
-            Let&apos;s talk about your business.
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6" style={{ border: '1px solid rgba(83,74,183,0.3)', background: 'rgba(83,74,183,0.08)', color: '#A8A4F0' }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#7B72E9', boxShadow: '0 0 6px #7B72E9' }} />
+            Complimentary · 45 minutes
+          </div>
+          <h1 className="font-display font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#F2F0FC' }}>
+            Let&apos;s talk about{' '}
+            <span className="gradient-text">your business.</span>
           </h1>
-          <p className="text-lg text-[#444441] leading-relaxed">
+          <p className="text-lg leading-relaxed" style={{ color: '#9490B8' }}>
             Book a complimentary 45-minute Strategy Session. We&apos;ll look at where you are, where you want to be, and what&apos;s standing in between.
           </p>
         </div>
       </section>
 
       {/* FORM + SIDEBAR */}
-      <section className="py-12 px-6 pb-24" style={{ background: '#FAFAF8' }}>
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-5 gap-12">
+      <section className="relative pb-24 px-6 z-10">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-5 gap-10">
+
           {/* Form */}
           <div className="md:col-span-3">
             {submitted ? (
-              <div className="rounded-card bg-white border border-black/[0.08] p-12 text-center shadow-card">
-                <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: '#E1F5EE' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12l5 5L19 7" stroke="#0F6E56" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+              <div className="rounded-2xl p-12 text-center" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: 'rgba(29,158,117,0.12)', border: '1px solid rgba(29,158,117,0.2)' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="#24C28F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </div>
-                <h2 className="text-xl font-semibold mb-2" style={{ color: '#26215C' }}>We&apos;ve got your request.</h2>
-                <p className="text-[#888780] text-sm">
-                  We&apos;ll review your message and reach out within 1 business day to confirm your session.
-                </p>
+                <h2 className="font-display font-bold text-xl mb-2" style={{ color: '#F2F0FC' }}>We&apos;ve got your request.</h2>
+                <p className="text-sm" style={{ color: '#9490B8' }}>We&apos;ll reach out within 1 business day to confirm your session.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="rounded-card bg-white border border-black/[0.08] p-8 shadow-card flex flex-col gap-5">
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl p-8 flex flex-col gap-5"
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
+              >
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-[#444441] mb-1.5">Full Name *</label>
-                    <input
-                      name="name"
-                      required
-                      className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors"
-                      placeholder="Jane Smith"
-                    />
+                    <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>Full Name *</label>
+                    <input name="name" required className="input-dark" placeholder="Jane Smith" />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#444441] mb-1.5">Company Name *</label>
-                    <input
-                      name="company"
-                      required
-                      className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors"
-                      placeholder="Smith HVAC Inc."
-                    />
+                    <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>Company Name *</label>
+                    <input name="company" required className="input-dark" placeholder="Smith HVAC Inc." />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#444441] mb-1.5">Industry</label>
-                  <select
-                    name="industry"
-                    className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors bg-white"
-                  >
+                  <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>Industry</label>
+                  <select name="industry" className="input-dark" style={{ background: '#0D0B26' }}>
                     <option value="">Select your industry</option>
                     <option>HVAC / Mechanical</option>
                     <option>General Contracting</option>
@@ -95,41 +86,22 @@ export default function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#444441] mb-1.5">What&apos;s your biggest business challenge right now?</label>
-                  <textarea
-                    name="challenge"
-                    rows={4}
-                    className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors resize-none"
-                    placeholder="Tell us what's on your mind..."
-                  />
+                  <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>What&apos;s your biggest business challenge right now?</label>
+                  <textarea name="challenge" rows={4} className="input-dark resize-none" placeholder="Tell us what's on your mind..." />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-[#444441] mb-1.5">Email *</label>
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors"
-                      placeholder="jane@smithhvac.ca"
-                    />
+                    <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>Email *</label>
+                    <input name="email" type="email" required className="input-dark" placeholder="jane@smithhvac.ca" />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#444441] mb-1.5">Phone</label>
-                    <input
-                      name="phone"
-                      type="tel"
-                      className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors"
-                      placeholder="416-555-0100"
-                    />
+                    <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>Phone</label>
+                    <input name="phone" type="tel" className="input-dark" placeholder="416-555-0100" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#444441] mb-1.5">How did you hear about us?</label>
-                  <select
-                    name="source"
-                    className="w-full border border-black/[0.12] rounded-lg px-3.5 py-2.5 text-sm text-[#2C2C2A] outline-none focus:border-[#3C3489] transition-colors bg-white"
-                  >
+                  <label className="block text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#4A4868' }}>How did you hear about us?</label>
+                  <select name="source" className="input-dark" style={{ background: '#0D0B26' }}>
                     <option value="">Select one</option>
                     <option>LinkedIn</option>
                     <option>Google Search</option>
@@ -141,48 +113,48 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 rounded-lg text-base font-semibold text-white transition-colors disabled:opacity-60"
-                  style={{ background: '#3C3489' }}
+                  className="w-full py-3.5 rounded-xl text-base font-semibold text-white transition-opacity disabled:opacity-50 btn-glow"
+                  style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}
                 >
                   {loading ? 'Sending...' : 'Book My Complimentary Session'}
                 </button>
-                <p className="text-xs text-[#888780] text-center">Complimentary for qualifying Ontario businesses. We respond within 1 business day.</p>
+                <p className="text-xs text-center" style={{ color: '#4A4868' }}>
+                  Complimentary for qualifying Ontario businesses. We respond within 1 business day.
+                </p>
               </form>
             )}
           </div>
 
           {/* Sidebar */}
-          <div className="md:col-span-2 flex flex-col gap-6">
-            <div className="rounded-card bg-white border border-black/[0.08] p-6 shadow-card">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#888780] mb-5">What happens next</h3>
+          <div className="md:col-span-2 flex flex-col gap-5">
+            <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: '#4A4868' }}>What happens next</h3>
               <div className="flex flex-col gap-5">
                 {[
-                  { step: '1', label: 'You book', desc: 'Confirmation email sent immediately.' },
-                  { step: '2', label: 'We prepare', desc: 'We review your business before the call.' },
-                  { step: '3', label: 'We meet', desc: '45 minutes of focused strategic thinking.' },
-                  { step: '4', label: 'You decide', desc: 'No obligation to continue. Zero pressure.' },
+                  { step: '01', label: 'You book', desc: 'Confirmation email sent immediately.' },
+                  { step: '02', label: 'We prepare', desc: 'We review your business before the call.' },
+                  { step: '03', label: 'We meet', desc: '45 minutes of focused strategic thinking.' },
+                  { step: '04', label: 'You decide', desc: 'No obligation to continue. Zero pressure.' },
                 ].map(({ step, label, desc }) => (
                   <div key={step} className="flex gap-3">
-                    <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style={{ background: '#3C3489' }}>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 font-display" style={{ background: 'rgba(83,74,183,0.1)', border: '1px solid rgba(83,74,183,0.2)', color: '#7B72E9' }}>
                       {step}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-[#2C2C2A]">{label}</p>
-                      <p className="text-xs text-[#888780]">{desc}</p>
+                      <p className="text-sm font-semibold font-display" style={{ color: '#F2F0FC' }}>{label}</p>
+                      <p className="text-xs" style={{ color: '#4A4868' }}>{desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-card bg-white border border-black/[0.08] p-6 shadow-card">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#888780] mb-4">Get in touch</h3>
-              <div className="flex flex-col gap-3">
-                <a href="mailto:hello@intzich.com" className="text-sm text-[#3C3489] font-medium no-underline hover:text-[#26215C]">
-                  hello@intzich.com
-                </a>
-                <p className="text-sm text-[#888780]">Ontario, Canada</p>
-                <p className="text-sm text-[#888780]">Serving all of Ontario</p>
+            <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#4A4868' }}>Get in touch</h3>
+              <div className="flex flex-col gap-2.5">
+                <a href="mailto:hello@intzich.com" className="text-sm font-medium no-underline" style={{ color: '#7B72E9' }}>hello@intzich.com</a>
+                <p className="text-sm" style={{ color: '#4A4868' }}>Ontario, Canada</p>
+                <p className="text-sm" style={{ color: '#4A4868' }}>Serving all of Ontario</p>
               </div>
             </div>
           </div>

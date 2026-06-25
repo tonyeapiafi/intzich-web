@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Intzich | Business Strategy & Digital Advisory | Ontario',
     description:
-      'Intzich helps construction, trades, and professional services companies in Ontario build stronger organizations and a powerful digital presence.',
+      'Strategy and digital advisory for construction, trades, and professional services businesses in Ontario.',
     url: 'https://intzich.com',
     siteName: 'Intzich',
     locale: 'en_CA',
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" style={{ background: '#07061A' }}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,172 +1,167 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'About Intzich | Tonye Apiafi, PMP | Ontario Business Advisory',
-  description:
-    'Intzich was founded by Tonye Apiafi, a PMP-certified project manager and civil engineering professional with 10+ years in GTA construction and trades.',
+  description: 'Intzich was founded by Tonye Apiafi, a PMP-certified project manager and civil engineering professional with 10+ years in GTA construction and trades.',
 }
 
 export default function About() {
   return (
-    <div className="pt-16">
+    <div style={{ background: '#07061A' }}>
+
       {/* HERO */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-[1200px] mx-auto max-w-[700px]">
-          <h1 className="text-4xl md:text-[40px] font-bold mb-5 leading-tight" style={{ color: '#26215C' }}>
-            Built by someone who understands your world.
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+        <div className="absolute rounded-full pointer-events-none" style={{ width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(83,74,183,0.12) 0%, transparent 70%)', top: '-100px', right: '10%', filter: 'blur(80px)', animation: 'orb-drift-1 14s ease-in-out infinite' }} />
+        <div className="absolute inset-0 dot-grid pointer-events-none" style={{ opacity: 0.4 }} />
+        <div className="max-w-[1200px] mx-auto relative z-10 max-w-[760px]">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] mb-6" style={{ color: '#F2F0FC' }}>
+            Built by someone who{' '}
+            <span className="gradient-text">understands your world.</span>
           </h1>
-          <p className="text-lg text-[#444441] leading-relaxed max-w-[580px]">
+          <p className="text-lg leading-relaxed max-w-[560px]" style={{ color: '#9490B8' }}>
             Intzich exists because the businesses that build our cities, run our infrastructure, and keep our buildings running deserve senior-level strategic support — not just the ones who can afford a Bay Street firm.
           </p>
         </div>
       </section>
 
       {/* FOUNDER */}
-      <section className="py-20 px-6" style={{ background: '#FAFAF8' }}>
+      <section className="py-24 px-6" style={{ background: '#0D0B26' }}>
         <div className="max-w-[1200px] mx-auto">
           <div className="grid md:grid-cols-3 gap-12 items-start">
-            {/* Avatar */}
-            <div className="flex flex-col items-center text-center">
+            <ScrollReveal className="flex flex-col items-center text-center">
               <div
-                className="w-32 h-32 rounded-full flex items-center justify-center text-3xl font-bold text-white mb-4"
-                style={{ background: '#3C3489', border: '4px solid #EEEDFE' }}
+                className="w-32 h-32 rounded-2xl flex items-center justify-center text-3xl font-bold mb-5 font-display"
+                style={{
+                  background: 'rgba(83,74,183,0.12)',
+                  border: '1px solid rgba(83,74,183,0.25)',
+                  color: '#A8A4F0',
+                  boxShadow: '0 0 40px rgba(83,74,183,0.1)',
+                }}
               >
                 TA
               </div>
-              <h2 className="text-xl font-bold mb-1" style={{ color: '#26215C' }}>Tonye Apiafi, PMP</h2>
-              <p className="text-sm text-[#888780]">Founder, Intzich</p>
-              <p className="text-sm text-[#888780]">Project Manager & Operational Strategy Leader, Lloyd HVAC Services</p>
-            </div>
+              <h2 className="font-display font-bold text-xl mb-1" style={{ color: '#F2F0FC' }}>Tonye Apiafi, PMP</h2>
+              <p className="text-sm mb-1" style={{ color: '#9490B8' }}>Founder, Intzich</p>
+              <p className="text-xs" style={{ color: '#4A4868' }}>Project Manager & Operational Strategy Leader, Lloyd HVAC Services</p>
+            </ScrollReveal>
 
-            {/* Bio */}
             <div className="md:col-span-2 flex flex-col gap-5">
-              <p className="text-[#444441] leading-relaxed">
-                Tonye is a civil engineering professional and PMP-certified project manager with over a decade of experience in GTA construction, mechanical contracting, and project delivery. He serves as Project Manager and Operational Strategy Leader at Lloyd HVAC Services Inc. — a full-service HVAC and mechanical contractor working across municipal, federal, institutional, and commercial sectors in Ontario.
-              </p>
-              <p className="text-[#444441] leading-relaxed">
-                Working inside a trades business at the operational level gave Tonye a front-row seat to the challenges that most advisors never see: cash flow pressure on multi-month projects, the complexity of municipal and DND tendering, the margin squeeze of competitive bidding, and the difficulty of building a team that operates without depending on one person for every decision. He built Intzich to solve those exact problems — for other businesses like his.
-              </p>
-              <p className="text-[#444441] leading-relaxed">
-                Intzich is his answer to a gap he saw clearly: world-class strategic thinking, combined with real digital capability, made accessible to the businesses that need it most.
-              </p>
+              <ScrollReveal>
+                <p className="leading-relaxed" style={{ color: '#9490B8' }}>
+                  Tonye is a civil engineering professional and PMP-certified project manager with over a decade of experience in GTA construction, mechanical contracting, and project delivery. He serves as Project Manager and Operational Strategy Leader at Lloyd HVAC Services Inc. — a full-service HVAC and mechanical contractor working across municipal, federal, institutional, and commercial sectors in Ontario.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <p className="leading-relaxed" style={{ color: '#9490B8' }}>
+                  Working inside a trades business at the operational level gave Tonye a front-row seat to the challenges that most advisors never see: cash flow pressure on multi-month projects, the complexity of municipal and DND tendering, the margin squeeze of competitive bidding, and the difficulty of building a team that operates without depending on one person for every decision. He built Intzich to solve those exact problems — for other businesses like his.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="leading-relaxed" style={{ color: '#9490B8' }}>
+                  Intzich is his answer to a gap he saw clearly: world-class strategic thinking, combined with real digital capability, made accessible to the businesses that need it most.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
 
       {/* CREDENTIALS */}
-      <section className="py-12 px-6 bg-white border-y border-black/[0.06]">
+      <section className="py-12 px-6" style={{ background: '#07061A', borderTop: '1px solid rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { badge: 'PMP', label: 'Project Management Professional' },
               { badge: 'COR', label: 'COR 2020 Safety Certified' },
               { badge: 'TSCM', label: 'Turner School of Construction Management' },
-              { badge: '10+', label: 'Years Trades Operations in Ontario' },
-            ].map(({ badge, label }) => (
-              <div key={badge} className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
-                  style={{ background: '#3C3489' }}
-                >
-                  {badge}
+              { badge: '10+', label: 'Years in GTA Trades & Construction' },
+            ].map(({ badge, label }, i) => (
+              <ScrollReveal key={badge} delay={i * 80}>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xs font-bold flex-shrink-0 font-display" style={{ background: 'rgba(83,74,183,0.12)', border: '1px solid rgba(83,74,183,0.2)', color: '#7B72E9' }}>
+                    {badge}
+                  </div>
+                  <p className="text-sm font-medium" style={{ color: '#9490B8' }}>{label}</p>
                 </div>
-                <p className="text-sm font-medium text-[#2C2C2A]">{label}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* MISSION QUOTE */}
-      <section className="py-16 px-6" style={{ background: '#3C3489' }}>
-        <div className="max-w-[720px] mx-auto text-center">
-          <p className="text-white text-2xl font-semibold leading-snug mb-6">
-            &ldquo;Every business owner deserves access to the kind of strategic thinking that used to be reserved for the biggest companies. That&apos;s what Intzich is here to change.&rdquo;
-          </p>
-          <p className="text-[#CECBF6] text-sm">— Tonye Apiafi, Founder</p>
+      <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#0D0B26' }}>
+        <div className="absolute rounded-full pointer-events-none" style={{ width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(83,74,183,0.1) 0%, transparent 70%)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', filter: 'blur(60px)' }} />
+        <div className="max-w-[720px] mx-auto text-center relative z-10">
+          <ScrollReveal>
+            <div className="text-4xl mb-6" style={{ color: '#534AB7' }}>&ldquo;</div>
+            <p className="font-display font-bold text-2xl sm:text-3xl leading-snug mb-6" style={{ color: '#F2F0FC' }}>
+              Every business owner deserves access to the kind of strategic thinking that used to be reserved for the biggest companies. That&apos;s what Intzich is here to change.
+            </p>
+            <p className="text-sm" style={{ color: '#4A4868' }}>— Tonye Apiafi, Founder</p>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* OUR VENTURES */}
-      <section className="py-20 px-6" style={{ background: '#FAFAF8' }}>
+      {/* VENTURES */}
+      <section className="py-24 px-6" style={{ background: '#07061A' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold" style={{ color: '#26215C' }}>Our ventures</h2>
-          </div>
+          <ScrollReveal className="text-center mb-14">
+            <p className="text-sm font-medium uppercase tracking-widest mb-3" style={{ color: '#534AB7' }}>The Ecosystem</p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl" style={{ color: '#F2F0FC' }}>Our ventures</h2>
+          </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                name: 'Intzich Advisory',
-                desc: 'Organizational strategy and business management consulting for SMBs, trades, and professional services firms across Ontario.',
-                link: '/advisory',
-                linkLabel: 'Learn more →',
-                color: '#3C3489',
-                bg: '#EEEDFE',
-              },
-              {
-                name: 'Intzich Digital',
-                desc: 'AI-assisted websites, digital marketing, and workflow automation built for growing businesses.',
-                link: '/digital',
-                linkLabel: 'Learn more →',
-                color: '#0F6E56',
-                bg: '#E1F5EE',
-              },
-              {
-                name: 'Lloyd HVAC Services',
-                desc: 'Our sister company and one of Ontario\'s leading mechanical subcontractors. Tonye serves as Project Manager and Operational Strategy Leader, driving project delivery across GTA, Mississauga, Pickering, Peterborough, Waterloo Region, and CFB Borden.',
-                link: 'https://lloydhvac.ca',
-                linkLabel: 'Visit lloydhvac.ca ↗',
-                color: '#633806',
-                bg: '#FAEEDA',
-                external: true,
-              },
-            ].map(({ name, desc, link, linkLabel, color, bg, external }) => (
-              <div key={name} className="rounded-card border border-black/[0.08] p-7 bg-white shadow-card hover:shadow-card-hover transition-all duration-200">
-                <div className="inline-block px-2.5 py-1 rounded text-xs font-semibold mb-4" style={{ background: bg, color }}>
-                  {name}
+              { name: 'Intzich Advisory', color: '#7B72E9', bg: 'rgba(83,74,183,0.08)', border: 'rgba(83,74,183,0.2)', desc: 'Organizational strategy and business management consulting for SMBs, trades, and professional services firms across Ontario.', link: '/advisory', linkLabel: 'Learn more →', external: false },
+              { name: 'Intzich Digital', color: '#24C28F', bg: 'rgba(29,158,117,0.08)', border: 'rgba(29,158,117,0.2)', desc: 'AI-assisted websites, digital marketing, and workflow automation built for growing businesses.', link: '/digital', linkLabel: 'Learn more →', external: false },
+              { name: 'Lloyd HVAC Services', color: '#BA7517', bg: 'rgba(186,117,23,0.08)', border: 'rgba(186,117,23,0.2)', desc: 'Our sister company and one of Ontario\'s leading mechanical subcontractors. Tonye serves as Project Manager and Operational Strategy Leader, driving project delivery across GTA, Mississauga, Pickering, Peterborough, Waterloo Region, and CFB Borden.', link: 'https://lloydhvac.ca', linkLabel: 'Visit lloydhvac.ca ↗', external: true },
+            ].map(({ name, color, bg, border, desc, link, linkLabel, external }, i) => (
+              <ScrollReveal key={name} delay={i * 100}>
+                <div className="rounded-2xl p-7 h-full flex flex-col" style={{ background: bg, border: `1px solid ${border}` }}>
+                  <div className="text-xs font-semibold font-display mb-4" style={{ color }}>
+                    {name}
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: '#9490B8' }}>{desc}</p>
+                  {external ? (
+                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold no-underline" style={{ color }}>{linkLabel}</a>
+                  ) : (
+                    <Link href={link} className="text-sm font-semibold no-underline" style={{ color }}>{linkLabel}</Link>
+                  )}
                 </div>
-                <p className="text-sm text-[#444441] leading-relaxed mb-5">{desc}</p>
-                {external ? (
-                  <a href={link} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold no-underline" style={{ color }}>
-                    {linkLabel}
-                  </a>
-                ) : (
-                  <Link href={link} className="text-sm font-semibold no-underline" style={{ color }}>
-                    {linkLabel}
-                  </Link>
-                )}
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LIGHT UP CAMPAIGNS */}
-      <section className="py-12 px-6 bg-white">
+      {/* LIGHT UP */}
+      <section className="py-12 px-6" style={{ background: '#0D0B26' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="rounded-card border border-black/[0.06] p-8 bg-[#FAFAF8]">
-            <h3 className="text-lg font-semibold mb-3" style={{ color: '#26215C' }}>Light Up Campaigns</h3>
-            <p className="text-sm text-[#444441] leading-relaxed max-w-[640px]">
-              Beyond business, Intzich is committed to community through Light Up Campaigns — an initiative bringing outreach and resources to communities across Ontario, including Cobourg, Stouffville, Port Hope, King City, and Northumberland County.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="rounded-2xl p-8" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <h3 className="font-display font-semibold text-lg mb-3" style={{ color: '#F2F0FC' }}>Light Up Campaigns</h3>
+              <p className="text-sm leading-relaxed max-w-[640px]" style={{ color: '#9490B8' }}>
+                Beyond business, Intzich is committed to community through Light Up Campaigns — an initiative bringing outreach and resources to communities across Ontario, including Cobourg, Stouffville, Port Hope, King City, and Northumberland County.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 text-center" style={{ background: '#EEEDFE' }}>
+      <section className="py-20 px-6 text-center" style={{ background: '#07061A' }}>
         <div className="max-w-[480px] mx-auto">
-          <h2 className="text-2xl font-semibold mb-3" style={{ color: '#26215C' }}>
-            Work with someone who gets it.
-          </h2>
-          <p className="text-[#5F5E5A] mb-6">
-            Book a complimentary Strategy Session and see the difference it makes when your advisor has actually lived your world.
-          </p>
-          <Link href="/contact" className="inline-block px-7 py-3.5 rounded-lg text-base font-semibold text-white no-underline" style={{ background: '#3C3489' }}>
-            Book a Strategy Session
-          </Link>
+          <ScrollReveal>
+            <h2 className="font-display font-bold text-2xl sm:text-3xl mb-3" style={{ color: '#F2F0FC' }}>Work with someone who gets it.</h2>
+            <p className="mb-6" style={{ color: '#9490B8' }}>
+              Book a complimentary Strategy Session and see the difference it makes when your advisor has actually lived your world.
+            </p>
+            <Link href="/contact" className="inline-block px-7 py-3.5 rounded-xl text-base font-semibold text-white no-underline btn-glow" style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}>
+              Book a Strategy Session
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
     </div>

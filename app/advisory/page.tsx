@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'Intzich Advisory | Business Strategy & Organizational Consulting | Ontario',
@@ -9,24 +10,44 @@ export const metadata: Metadata = {
 
 export default function Advisory() {
   return (
-    <div className="pt-16">
+    <div style={{ background: '#07061A' }}>
+
       {/* HERO */}
-      <section className="py-24 px-6" style={{ background: '#EEEDFE', borderLeft: '8px solid #3C3489' }}>
-        <div className="max-w-[1200px] mx-auto max-w-[700px]">
-          <div className="inline-block px-2.5 py-1 rounded text-xs font-semibold mb-5" style={{ background: '#3C3489', color: '#FFFFFF' }}>
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+        <div
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: '600px', height: '600px',
+            background: 'radial-gradient(circle, rgba(83,74,183,0.15) 0%, transparent 70%)',
+            top: '-150px', left: '-150px',
+            filter: 'blur(80px)',
+            animation: 'orb-drift-1 12s ease-in-out infinite',
+          }}
+        />
+        <div
+          className="absolute inset-0 dot-grid pointer-events-none"
+          style={{ opacity: 0.5 }}
+        />
+        <div className="max-w-[1200px] mx-auto relative z-10">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6"
+            style={{ border: '1px solid rgba(83,74,183,0.3)', background: 'rgba(83,74,183,0.08)', color: '#A8A4F0' }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#7B72E9', boxShadow: '0 0 6px #7B72E9' }} />
             Intzich Advisory
           </div>
-          <h1 className="text-4xl md:text-[40px] font-bold mb-5 leading-tight" style={{ color: '#26215C' }}>
-            Strategic clarity for businesses ready to scale.
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 max-w-[800px]" style={{ color: '#F2F0FC' }}>
+            Strategic clarity for businesses ready to{' '}
+            <span className="gradient-text">scale.</span>
           </h1>
-          <p className="text-lg text-[#444441] leading-relaxed mb-8 max-w-[580px]">
+          <p className="text-lg max-w-[520px] leading-relaxed mb-8" style={{ color: '#9490B8' }}>
             Most business owners are working harder than ever but not growing the way they want. The problem isn&apos;t effort. It&apos;s strategy.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/contact" className="inline-block px-7 py-3.5 rounded-lg text-base font-semibold text-white no-underline" style={{ background: '#3C3489' }}>
+            <Link href="/contact" className="inline-block px-7 py-3.5 rounded-xl text-base font-semibold text-white no-underline btn-glow" style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}>
               Book a Strategy Session
             </Link>
-            <a href="#offers" className="inline-block px-7 py-3.5 rounded-lg text-base font-semibold no-underline border" style={{ color: '#3C3489', borderColor: '#3C3489' }}>
+            <a href="#offers" className="inline-block px-7 py-3.5 rounded-xl text-base font-semibold no-underline" style={{ border: '1px solid rgba(255,255,255,0.1)', color: '#9490B8' }}>
               See Our Offers
             </a>
           </div>
@@ -34,12 +55,13 @@ export default function Advisory() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-24 px-6" style={{ background: '#0D0B26' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold" style={{ color: '#26215C' }}>What we do</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <ScrollReveal className="text-center mb-14">
+            <p className="text-sm font-medium uppercase tracking-widest mb-3" style={{ color: '#534AB7' }}>Capabilities</p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl" style={{ color: '#F2F0FC' }}>What we do</h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: 'Strategy',
@@ -53,132 +75,126 @@ export default function Advisory() {
                 title: 'Profit',
                 items: ['Margin analysis & pricing', 'Cash flow optimization', 'KPI frameworks', 'Cost structure review'],
               },
-            ].map(({ title, items }) => (
-              <div key={title} className="rounded-card border border-black/[0.08] p-8 shadow-card">
-                <h3 className="text-xl font-semibold mb-5" style={{ color: '#26215C' }}>{title}</h3>
-                <ul className="flex flex-col gap-2.5">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-[#444441]">
-                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#3C3489' }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            ].map(({ title, items }, i) => (
+              <ScrollReveal key={title} delay={i * 100}>
+                <div className="dark-card p-8 h-full">
+                  <h3 className="font-display font-semibold text-lg mb-5" style={{ color: '#F2F0FC' }}>{title}</h3>
+                  <ul className="flex flex-col gap-2.5">
+                    {items.map((item) => (
+                      <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#9490B8' }}>
+                        <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#7B72E9' }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* METHODOLOGY */}
-      <section className="py-20 px-6" style={{ background: '#FAFAF8' }}>
+      <section className="py-24 px-6" style={{ background: '#07061A' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold mb-3" style={{ color: '#26215C' }}>How we approach it</h2>
-            <p className="text-[#888780] max-w-[500px] mx-auto">We don&apos;t prescribe before we diagnose.</p>
-          </div>
+          <ScrollReveal className="text-center mb-14">
+            <p className="text-sm font-medium uppercase tracking-widest mb-3" style={{ color: '#534AB7' }}>Methodology</p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl mb-3" style={{ color: '#F2F0FC' }}>
+              We don&apos;t prescribe before we diagnose.
+            </h2>
+            <p style={{ color: '#9490B8' }}>Every engagement starts with deep understanding.</p>
+          </ScrollReveal>
           <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { num: '1', label: 'Intake', desc: 'Deep-dive into your business, numbers, and goals.' },
-              { num: '2', label: 'Analysis', desc: 'We identify what\'s holding you back and where the leverage is.' },
-              { num: '3', label: 'Insight', desc: 'Clear diagnosis: strengths, gaps, and priority actions.' },
-              { num: '4', label: 'Roadmap', desc: 'A 90-day plan built for your specific situation.' },
-              { num: '5', label: 'Execution', desc: 'We stay involved to support implementation.' },
-            ].map(({ num, label, desc }) => (
-              <div key={num} className="text-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3" style={{ background: '#3C3489' }}>
-                  {num}
+              { num: '01', label: 'Intake', desc: 'Deep-dive into your business, numbers, and goals.' },
+              { num: '02', label: 'Analysis', desc: 'We identify what\'s holding you back and where the leverage is.' },
+              { num: '03', label: 'Insight', desc: 'Clear diagnosis: strengths, gaps, and priority actions.' },
+              { num: '04', label: 'Roadmap', desc: 'A 90-day plan built for your specific situation.' },
+              { num: '05', label: 'Execution', desc: 'We stay involved to support implementation.' },
+            ].map(({ num, label, desc }, i) => (
+              <ScrollReveal key={num} delay={i * 80}>
+                <div className="text-center">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-bold mx-auto mb-3 font-display" style={{ background: 'rgba(83,74,183,0.1)', border: '1px solid rgba(83,74,183,0.2)', color: '#7B72E9' }}>
+                    {num}
+                  </div>
+                  <h4 className="font-display font-semibold text-sm mb-1.5" style={{ color: '#F2F0FC' }}>{label}</h4>
+                  <p className="text-xs leading-relaxed" style={{ color: '#4A4868' }}>{desc}</p>
                 </div>
-                <h4 className="text-sm font-semibold mb-1" style={{ color: '#26215C' }}>{label}</h4>
-                <p className="text-xs text-[#888780] leading-relaxed">{desc}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* OFFERS */}
-      <section id="offers" className="py-20 px-6 bg-white">
+      <section id="offers" className="py-24 px-6" style={{ background: '#0D0B26' }}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold" style={{ color: '#26215C' }}>Advisory Offers</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <ScrollReveal className="text-center mb-14">
+            <p className="text-sm font-medium uppercase tracking-widest mb-3" style={{ color: '#534AB7' }}>Offers</p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl" style={{ color: '#F2F0FC' }}>Advisory engagements</h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Foundation Sprint */}
-            <div id="foundation-sprint" className="rounded-card border border-black/[0.08] p-10 shadow-card">
-              <div className="inline-block px-2.5 py-1 rounded text-xs font-semibold mb-4" style={{ background: '#EEEDFE', color: '#3C3489' }}>
-                Advisory · Project
+            <ScrollReveal delay={0}>
+              <div id="foundation-sprint" className="dark-card p-10 h-full flex flex-col">
+                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.1)', color: '#A8A4F0' }}>
+                  Advisory · Project
+                </div>
+                <h3 className="font-display font-bold text-2xl mb-1" style={{ color: '#F2F0FC' }}>Foundation Sprint</h3>
+                <p className="font-display font-bold text-4xl mb-1 gradient-text-purple">$3,500 CAD</p>
+                <p className="text-xs mb-5" style={{ color: '#4A4868' }}>30-day engagement · One-time</p>
+                <p className="text-sm mb-6" style={{ color: '#9490B8' }}>Ideal for SMBs at an inflection point who need clarity fast.</p>
+                <h4 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#4A4868' }}>What&apos;s included</h4>
+                <ul className="flex flex-col gap-2.5 mb-8 flex-1">
+                  {['Deep-dive business diagnostic', 'Full SWOT analysis', '90-Day Growth Roadmap', 'Priority action list', '1 follow-up strategy call', 'Written deliverables package'].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#9490B8' }}>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="rgba(83,74,183,0.2)" /><path d="M4 7l2.5 2.5L10 5" stroke="#7B72E9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="inline-block px-6 py-3 rounded-xl text-sm font-semibold text-white no-underline btn-glow w-fit" style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}>
+                  Start Foundation Sprint
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold mb-1" style={{ color: '#26215C' }}>Foundation Sprint</h3>
-              <p className="text-3xl font-bold mb-5" style={{ color: '#3C3489' }}>$3,500 CAD</p>
-              <p className="text-sm text-[#888780] mb-6">30-day strategy engagement. Ideal for SMBs at an inflection point.</p>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-[#888780] mb-3">What&apos;s included</h4>
-              <ul className="flex flex-col gap-2.5 mb-8">
-                {[
-                  'Deep-dive business diagnostic',
-                  'Full SWOT analysis',
-                  '90-Day Growth Roadmap',
-                  'Priority action list',
-                  '1 follow-up strategy call',
-                  'Written deliverables package',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-[#444441]">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <circle cx="7" cy="7" r="7" fill="#EEEDFE" />
-                      <path d="M4 7l2.5 2.5L10 5" stroke="#3C3489" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact" className="inline-block px-6 py-3 rounded-lg text-sm font-semibold text-white no-underline" style={{ background: '#3C3489' }}>
-                Start Foundation Sprint
-              </Link>
-            </div>
+            </ScrollReveal>
 
             {/* Scale Partner */}
-            <div id="scale-partner" className="rounded-card border-2 p-10 shadow-cta" style={{ borderColor: '#3C3489' }}>
-              <div className="inline-block px-2.5 py-1 rounded text-xs font-semibold mb-4" style={{ background: '#3C3489', color: '#FFFFFF' }}>
-                Advisory + Digital · Retainer
+            <ScrollReveal delay={150}>
+              <div id="scale-partner" className="p-10 h-full flex flex-col" style={{ background: 'rgba(83,74,183,0.06)', border: '1px solid rgba(83,74,183,0.3)', borderRadius: '16px', boxShadow: '0 0 60px rgba(83,74,183,0.08)' }}>
+                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.15)', color: '#A8A4F0' }}>
+                  Advisory + Digital · Retainer
+                </div>
+                <h3 className="font-display font-bold text-2xl mb-1" style={{ color: '#F2F0FC' }}>Scale Partner</h3>
+                <p className="font-display font-bold text-4xl mb-1 gradient-text">$4,500 CAD/mo</p>
+                <p className="text-xs mb-5" style={{ color: '#4A4868' }}>3-month minimum · Cancel after 3 months</p>
+                <p className="text-sm mb-6" style={{ color: '#9490B8' }}>Your embedded strategy + digital partner for growth-stage businesses.</p>
+                <h4 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#4A4868' }}>Monthly deliverables</h4>
+                <ul className="flex flex-col gap-2.5 mb-8 flex-1">
+                  {['2 × strategy sessions per month', 'Ongoing organizational advisory', 'Digital performance report', '4 LinkedIn posts per month', 'Priority access to the Intzich team', 'Quarterly roadmap reset'].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#9490B8' }}>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="rgba(83,74,183,0.2)" /><path d="M4 7l2.5 2.5L10 5" stroke="#7B72E9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="inline-block px-6 py-3 rounded-xl text-sm font-semibold text-white no-underline btn-glow w-fit" style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}>
+                  Become a Scale Partner
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold mb-1" style={{ color: '#26215C' }}>Scale Partner</h3>
-              <p className="text-3xl font-bold mb-1" style={{ color: '#3C3489' }}>$4,500 CAD/mo</p>
-              <p className="text-xs text-[#888780] mb-5">3-month minimum · Cancel after 3 months</p>
-              <p className="text-sm text-[#888780] mb-6">Your embedded strategy + digital partner. Growth-stage SMBs ready to scale.</p>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-[#888780] mb-3">Monthly deliverables</h4>
-              <ul className="flex flex-col gap-2.5 mb-8">
-                {[
-                  '2 × strategy sessions per month',
-                  'Ongoing organizational advisory',
-                  'Digital performance report',
-                  '4 LinkedIn posts per month',
-                  'Priority access to the Intzich team',
-                  'Quarterly roadmap reset',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-[#444441]">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <circle cx="7" cy="7" r="7" fill="#EEEDFE" />
-                      <path d="M4 7l2.5 2.5L10 5" stroke="#3C3489" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact" className="inline-block px-6 py-3 rounded-lg text-sm font-semibold text-white no-underline" style={{ background: '#3C3489' }}>
-                Become a Scale Partner
-              </Link>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section className="py-20 px-6" style={{ background: '#EEEDFE' }}>
+      <section className="py-24 px-6" style={{ background: '#07061A' }}>
         <div className="max-w-[1200px] mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-semibold mb-8" style={{ color: '#26215C' }}>
-                This is for you if...
+            <ScrollReveal>
+              <p className="text-sm font-medium uppercase tracking-widest mb-5" style={{ color: '#534AB7' }}>Is this you?</p>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl mb-8" style={{ color: '#F2F0FC' }}>
+                This is for you if<span className="gradient-text">...</span>
               </h2>
               <ul className="flex flex-col gap-4">
                 {[
@@ -189,27 +205,26 @@ export default function Advisory() {
                   'You want to scale but don\'t have a real plan',
                   'You need someone who understands your industry',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#444441]">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="flex-shrink-0 mt-0.5">
-                      <circle cx="9" cy="9" r="9" fill="#3C3489" />
-                      <path d="M5.5 9l2.5 2.5L12.5 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: '#9490B8' }}>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="flex-shrink-0 mt-0.5"><circle cx="9" cy="9" r="9" fill="rgba(83,74,183,0.15)" /><path d="M5.5 9l2.5 2.5L12.5 7" stroke="#7B72E9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     {item}
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="rounded-card-lg p-10 text-center" style={{ background: '#26215C' }}>
-              <p className="text-white text-xl font-semibold leading-snug mb-4">
-                &ldquo;Stop guessing. Start growing.&rdquo;
-              </p>
-              <p className="text-[#CECBF6] text-sm mb-6">
-                Your first strategy session is complimentary. No pitch, no pressure — just honest thinking about your business.
-              </p>
-              <Link href="/contact" className="inline-block px-6 py-3 rounded-lg text-sm font-semibold no-underline border border-white/30 text-white hover:bg-white/10 transition-colors">
-                Book a Session
-              </Link>
-            </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div className="rounded-2xl p-10 text-center" style={{ background: 'rgba(83,74,183,0.06)', border: '1px solid rgba(83,74,183,0.2)' }}>
+                <p className="font-display font-bold text-xl mb-4" style={{ color: '#F2F0FC' }}>
+                  &ldquo;Stop guessing. Start growing.&rdquo;
+                </p>
+                <p className="text-sm mb-6" style={{ color: '#9490B8' }}>
+                  Your first strategy session is complimentary. No pitch, no pressure.
+                </p>
+                <Link href="/contact" className="inline-block px-6 py-3 rounded-xl text-sm font-semibold text-white no-underline btn-glow" style={{ background: 'linear-gradient(135deg, #3C3489, #534AB7)' }}>
+                  Book a Session
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
