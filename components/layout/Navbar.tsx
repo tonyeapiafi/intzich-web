@@ -40,7 +40,7 @@ export default function Navbar() {
           <img
             src="https://res.cloudinary.com/dx9fyjudj/image/upload/v1755463446/intzich_logoo-22_1_hcgayw_gaqe7q.svg"
             alt="Intzich"
-            className="h-12 sm:h-14 w-auto"
+            className="h-14 sm:h-16 w-auto"
             style={{ filter: 'brightness(0) saturate(100%) invert(15%) sepia(40%) saturate(600%) hue-rotate(220deg) brightness(80%)' }}
           />
         </Link>
