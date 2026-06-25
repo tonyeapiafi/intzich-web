@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div style={{ background: '#07061A' }}>
+    <div style={{ background: '#FFFFFF' }}>
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
@@ -21,7 +21,7 @@ export default function Home() {
             className="absolute rounded-full"
             style={{
               width: '700px', height: '700px',
-              background: 'radial-gradient(circle, rgba(83,74,183,0.18) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(83,74,183,0.09) 0%, transparent 70%)',
               top: '-150px', left: '-150px',
               filter: 'blur(80px)',
               animation: 'orb-drift-1 12s ease-in-out infinite',
@@ -31,7 +31,7 @@ export default function Home() {
             className="absolute rounded-full"
             style={{
               width: '500px', height: '500px',
-              background: 'radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(20,144,104,0.07) 0%, transparent 70%)',
               top: '10%', right: '-100px',
               filter: 'blur(80px)',
               animation: 'orb-drift-2 15s ease-in-out infinite',
@@ -41,7 +41,7 @@ export default function Home() {
             className="absolute rounded-full"
             style={{
               width: '400px', height: '400px',
-              background: 'radial-gradient(circle, rgba(123,114,233,0.1) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(98,87,214,0.06) 0%, transparent 70%)',
               bottom: '10%', left: '30%',
               filter: 'blur(80px)',
               animation: 'orb-drift-3 18s ease-in-out infinite',
@@ -66,12 +66,12 @@ export default function Home() {
             style={{
               border: '1px solid rgba(123,114,233,0.35)',
               background: 'rgba(83,74,183,0.08)',
-              color: '#A8A4F0',
+              color: '#534AB7',
             }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
-              style={{ background: '#7B72E9', boxShadow: '0 0 6px #7B72E9' }}
+              style={{ background: '#534AB7', boxShadow: '0 0 6px #7B72E9' }}
             />
             Strategy & Digital Advisory · Ontario
           </div>
@@ -80,13 +80,13 @@ export default function Home() {
           <h1 className="font-display font-bold leading-[1.05] tracking-tight mb-6">
             <span
               className="hero-line hero-line-1 block text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
-              style={{ color: '#F2F0FC' }}
+              style={{ color: '#0D0B26' }}
             >
               Build a stronger
             </span>
             <span
               className="hero-line hero-line-2 block text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
-              style={{ color: '#F2F0FC' }}
+              style={{ color: '#0D0B26' }}
             >
               business.{' '}
               <span className="gradient-text">Scale</span>
@@ -101,7 +101,7 @@ export default function Home() {
           {/* Sub */}
           <p
             className="hero-line hero-sub text-base sm:text-lg leading-relaxed max-w-[560px] mx-auto mb-10"
-            style={{ color: '#9490B8' }}
+            style={{ color: '#7B79A0' }}
           >
             Intzich helps growing businesses in construction, trades, and professional
             services build stronger organizations, sharper strategies, and a powerful
@@ -122,7 +122,7 @@ export default function Home() {
               className="inline-block px-7 py-3.5 rounded-xl text-base font-semibold no-underline transition-all duration-200"
               style={{
                 border: '1px solid rgba(255,255,255,0.1)',
-                color: '#9490B8',
+                color: '#7B79A0',
               }}
             >
               See Our Services
@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <section style={{ borderTop: '1px solid rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.04)', background: 'rgba(255,255,255,0.015)' }}>
+      <section style={{ borderTop: '1px solid rgba(83,74,183,0.06)', borderBottom: '1px solid rgba(83,74,183,0.06)', background: 'rgba(83,74,183,0.04)' }}>
         <div className="max-w-[1200px] mx-auto px-6 py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
@@ -150,7 +150,7 @@ export default function Home() {
             ].map(({ icon, label }) => (
               <div key={label} className="flex items-center gap-3">
                 <span className="text-lg">{icon}</span>
-                <span className="text-sm font-medium" style={{ color: '#9490B8' }}>{label}</span>
+                <span className="text-sm font-medium" style={{ color: '#7B79A0' }}>{label}</span>
               </div>
             ))}
           </div>
@@ -158,17 +158,17 @@ export default function Home() {
       </section>
 
       {/* ── TWO ARMS ── */}
-      <section id="services" className="py-24 px-6" style={{ background: '#07061A' }}>
+      <section id="services" className="py-24 px-6" style={{ background: '#FFFFFF' }}>
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal className="text-center mb-14">
             <p className="text-sm font-medium uppercase tracking-widest mb-4" style={{ color: '#534AB7' }}>
               What We Do
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#F2F0FC' }}>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#0D0B26' }}>
               One firm. Two powerful
               <span className="gradient-text"> capabilities.</span>
             </h2>
-            <p className="max-w-[500px] mx-auto" style={{ color: '#9490B8' }}>
+            <p className="max-w-[500px] mx-auto" style={{ color: '#7B79A0' }}>
               Strategy that transforms your organization. Digital that transforms your market presence. Both, if you&apos;re ready to move fast.
             </p>
           </ScrollReveal>
@@ -176,28 +176,28 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Advisory */}
             <ScrollReveal delay={100}>
-              <div className="dark-card p-8 h-full" style={{ borderTop: '2px solid #534AB7' }}>
+              <div className="light-card p-8 h-full" style={{ borderTop: '2px solid #534AB7' }}>
                 <div
                   className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5"
-                  style={{ background: 'rgba(83,74,183,0.12)', color: '#A8A4F0' }}
+                  style={{ background: 'rgba(83,74,183,0.08)', color: '#534AB7' }}
                 >
                   Intzich Advisory
                 </div>
-                <h3 className="font-display font-bold text-xl mb-3" style={{ color: '#F2F0FC' }}>
+                <h3 className="font-display font-bold text-xl mb-3" style={{ color: '#0D0B26' }}>
                   Organizational Strategy &amp; Business Management
                 </h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: '#9490B8' }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: '#7B79A0' }}>
                   We help you build a business that runs smarter, scales faster, and stops depending entirely on you. Strategy, structure, profit — all of it.
                 </p>
                 <ul className="flex flex-col gap-2.5 mb-7">
                   {['90-Day Growth Roadmaps', 'Profit & Margin Optimization', 'Organizational Design & Scaling'].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#9490B8' }}>
-                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#7B72E9' }} />
+                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#7B79A0' }}>
+                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#534AB7' }} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Link href="/advisory" className="text-sm font-semibold no-underline" style={{ color: '#7B72E9' }}>
+                <Link href="/advisory" className="text-sm font-semibold no-underline" style={{ color: '#534AB7' }}>
                   Explore Advisory →
                 </Link>
               </div>
@@ -205,28 +205,28 @@ export default function Home() {
 
             {/* Digital */}
             <ScrollReveal delay={200}>
-              <div className="dark-card dark-card-teal p-8 h-full" style={{ borderTop: '2px solid #1D9E75' }}>
+              <div className="light-card light-card-teal p-8 h-full" style={{ borderTop: '2px solid #1D9E75' }}>
                 <div
                   className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5"
-                  style={{ background: 'rgba(29,158,117,0.12)', color: '#24C28F' }}
+                  style={{ background: 'rgba(20,144,104,0.07)', color: '#149068' }}
                 >
                   Intzich Digital
                 </div>
-                <h3 className="font-display font-bold text-xl mb-3" style={{ color: '#F2F0FC' }}>
+                <h3 className="font-display font-bold text-xl mb-3" style={{ color: '#0D0B26' }}>
                   AI-Assisted Websites, Marketing &amp; Automation
                 </h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: '#9490B8' }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: '#7B79A0' }}>
                   We build your digital presence from the ground up — websites, marketing systems, and AI-powered tools that make you look like a market leader and generate real leads.
                 </p>
                 <ul className="flex flex-col gap-2.5 mb-7">
                   {['AI-Powered Website Builds', 'Digital Marketing & SEO', 'Workflow Automation & AI Tools'].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#9490B8' }}>
-                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#24C28F' }} />
+                    <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: '#7B79A0' }}>
+                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#149068' }} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Link href="/digital" className="text-sm font-semibold no-underline" style={{ color: '#24C28F' }}>
+                <Link href="/digital" className="text-sm font-semibold no-underline" style={{ color: '#149068' }}>
                   Explore Digital →
                 </Link>
               </div>
@@ -236,17 +236,17 @@ export default function Home() {
       </section>
 
       {/* ── WHO WE SERVE ── */}
-      <section className="py-24 px-6" style={{ background: '#0D0B26' }}>
+      <section className="py-24 px-6" style={{ background: '#F6F5FF' }}>
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal className="text-center mb-14">
             <p className="text-sm font-medium uppercase tracking-widest mb-4" style={{ color: '#534AB7' }}>
               Industries
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#F2F0FC' }}>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#0D0B26' }}>
               Built for businesses
               <span className="gradient-text"> like yours</span>
             </h2>
-            <p className="max-w-[480px] mx-auto" style={{ color: '#9490B8' }}>
+            <p className="max-w-[480px] mx-auto" style={{ color: '#7B79A0' }}>
               We specialize in the industries where strategy and execution matter most — and where most firms leave money on the table.
             </p>
           </ScrollReveal>
@@ -262,10 +262,10 @@ export default function Home() {
             ].map(({ icon, label }, i) => (
               <ScrollReveal key={label} delay={i * 60}>
                 <div
-                  className="dark-card p-6 text-center cursor-default"
+                  className="light-card p-6 text-center cursor-default"
                 >
                   <div className="text-3xl mb-3">{icon}</div>
-                  <p className="text-sm font-medium" style={{ color: '#F2F0FC' }}>{label}</p>
+                  <p className="text-sm font-medium" style={{ color: '#0D0B26' }}>{label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -274,13 +274,13 @@ export default function Home() {
       </section>
 
       {/* ── THE PROCESS ── */}
-      <section className="py-24 px-6" style={{ background: '#07061A' }}>
+      <section className="py-24 px-6" style={{ background: '#FFFFFF' }}>
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-widest mb-4" style={{ color: '#534AB7' }}>
               How We Work
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl" style={{ color: '#F2F0FC' }}>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl" style={{ color: '#0D0B26' }}>
               A process built on
               <span className="gradient-text"> precision</span>
             </h2>
@@ -298,17 +298,17 @@ export default function Home() {
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold mx-auto mb-5 font-display"
                     style={{
-                      background: 'rgba(83,74,183,0.12)',
+                      background: 'rgba(83,74,183,0.08)',
                       border: '1px solid rgba(83,74,183,0.25)',
-                      color: '#7B72E9',
+                      color: '#534AB7',
                     }}
                   >
                     {num}
                   </div>
-                  <h3 className="font-display font-semibold text-base mb-2" style={{ color: '#F2F0FC' }}>
+                  <h3 className="font-display font-semibold text-base mb-2" style={{ color: '#0D0B26' }}>
                     {label}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#4A4868' }}>{desc}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#7B79A0' }}>{desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -317,13 +317,13 @@ export default function Home() {
       </section>
 
       {/* ── OFFERS ── */}
-      <section className="py-24 px-6" style={{ background: '#0D0B26' }}>
+      <section className="py-24 px-6" style={{ background: '#F6F5FF' }}>
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal className="text-center mb-14">
             <p className="text-sm font-medium uppercase tracking-widest mb-4" style={{ color: '#534AB7' }}>
               Pricing
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#F2F0FC' }}>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-4" style={{ color: '#0D0B26' }}>
               Three ways to work
               <span className="gradient-text"> with Intzich</span>
             </h2>
@@ -332,15 +332,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 items-stretch">
             {/* Foundation Sprint */}
             <ScrollReveal delay={0}>
-              <div className="dark-card p-8 h-full flex flex-col">
-                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.12)', color: '#A8A4F0' }}>
+              <div className="light-card p-8 h-full flex flex-col">
+                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.08)', color: '#534AB7' }}>
                   Advisory · Project
                 </div>
-                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#F2F0FC' }}>$3,500</p>
-                <p className="text-xs mb-4" style={{ color: '#4A4868' }}>CAD · One-time</p>
-                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#F2F0FC' }}>Foundation Sprint</h3>
-                <p className="text-sm flex-1 mb-6" style={{ color: '#9490B8' }}>30-day strategy engagement. Clarity, roadmap, action.</p>
-                <Link href="/advisory#foundation-sprint" className="text-sm font-semibold no-underline" style={{ color: '#7B72E9' }}>
+                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#0D0B26' }}>$3,500</p>
+                <p className="text-xs mb-4" style={{ color: '#7B79A0' }}>CAD · One-time</p>
+                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#0D0B26' }}>Foundation Sprint</h3>
+                <p className="text-sm flex-1 mb-6" style={{ color: '#7B79A0' }}>30-day strategy engagement. Clarity, roadmap, action.</p>
+                <Link href="/advisory#foundation-sprint" className="text-sm font-semibold no-underline" style={{ color: '#534AB7' }}>
                   Learn More →
                 </Link>
               </div>
@@ -354,7 +354,7 @@ export default function Home() {
                   background: 'rgba(83,74,183,0.06)',
                   border: '1px solid rgba(83,74,183,0.35)',
                   borderRadius: '16px',
-                  boxShadow: '0 0 60px rgba(83,74,183,0.12)',
+                  boxShadow: '0 0 60px rgba(83,74,183,0.08)',
                 }}
               >
                 <div
@@ -363,13 +363,13 @@ export default function Home() {
                 >
                   Most Popular
                 </div>
-                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(29,158,117,0.12)', color: '#24C28F' }}>
+                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(20,144,104,0.07)', color: '#149068' }}>
                   Digital · Project
                 </div>
-                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#F2F0FC' }}>$5,500</p>
-                <p className="text-xs mb-4" style={{ color: '#4A4868' }}>CAD · One-time</p>
-                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#F2F0FC' }}>Digital Launchpad</h3>
-                <p className="text-sm flex-1 mb-6" style={{ color: '#9490B8' }}>Complete AI-powered digital presence in 3–4 weeks.</p>
+                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#0D0B26' }}>$5,500</p>
+                <p className="text-xs mb-4" style={{ color: '#7B79A0' }}>CAD · One-time</p>
+                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#0D0B26' }}>Digital Launchpad</h3>
+                <p className="text-sm flex-1 mb-6" style={{ color: '#7B79A0' }}>Complete AI-powered digital presence in 3–4 weeks.</p>
                 <Link
                   href="/digital#digital-launchpad"
                   className="inline-block px-5 py-3 rounded-xl text-sm font-semibold text-white text-center no-underline btn-glow-teal"
@@ -382,15 +382,15 @@ export default function Home() {
 
             {/* Scale Partner */}
             <ScrollReveal delay={200}>
-              <div className="dark-card p-8 h-full flex flex-col">
-                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.08)', color: '#A8A4F0' }}>
+              <div className="light-card p-8 h-full flex flex-col">
+                <div className="inline-block px-2.5 py-1 rounded-md text-xs font-semibold mb-5 w-fit" style={{ background: 'rgba(83,74,183,0.08)', color: '#534AB7' }}>
                   Advisory + Digital
                 </div>
-                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#F2F0FC' }}>$4,500</p>
-                <p className="text-xs mb-4" style={{ color: '#4A4868' }}>CAD / month · 3-month min</p>
-                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#F2F0FC' }}>Scale Partner</h3>
-                <p className="text-sm flex-1 mb-6" style={{ color: '#9490B8' }}>Your embedded strategy + digital partner. Month to month.</p>
-                <Link href="/advisory#scale-partner" className="text-sm font-semibold no-underline" style={{ color: '#7B72E9' }}>
+                <p className="font-display font-bold text-3xl mb-1" style={{ color: '#0D0B26' }}>$4,500</p>
+                <p className="text-xs mb-4" style={{ color: '#7B79A0' }}>CAD / month · 3-month min</p>
+                <h3 className="font-display font-semibold text-lg mb-2" style={{ color: '#0D0B26' }}>Scale Partner</h3>
+                <p className="text-sm flex-1 mb-6" style={{ color: '#7B79A0' }}>Your embedded strategy + digital partner. Month to month.</p>
+                <Link href="/advisory#scale-partner" className="text-sm font-semibold no-underline" style={{ color: '#534AB7' }}>
                   Learn More →
                 </Link>
               </div>
@@ -400,7 +400,7 @@ export default function Home() {
       </section>
 
       {/* ── FOUNDER STRIP ── */}
-      <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#07061A' }}>
+      <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#FFFFFF' }}>
         <div
           className="absolute rounded-full pointer-events-none"
           style={{
@@ -416,7 +416,7 @@ export default function Home() {
             <div
               className="rounded-2xl p-10 md:p-14"
               style={{
-                background: 'rgba(255,255,255,0.02)',
+                background: 'rgba(83,74,183,0.04)',
                 border: '1px solid rgba(83,74,183,0.2)',
               }}
             >
@@ -424,18 +424,18 @@ export default function Home() {
                 <div
                   className="w-24 h-24 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0 font-display"
                   style={{
-                    background: 'rgba(83,74,183,0.15)',
+                    background: 'rgba(83,74,183,0.08)',
                     border: '1px solid rgba(83,74,183,0.3)',
-                    color: '#A8A4F0',
+                    color: '#534AB7',
                   }}
                 >
                   TA
                 </div>
                 <div className="flex-1">
-                  <p className="font-display font-bold text-xl sm:text-2xl mb-4" style={{ color: '#F2F0FC' }}>
+                  <p className="font-display font-bold text-xl sm:text-2xl mb-4" style={{ color: '#0D0B26' }}>
                     Built by someone who has lived your world.
                   </p>
-                  <p className="text-sm leading-relaxed mb-6 max-w-[600px]" style={{ color: '#9490B8' }}>
+                  <p className="text-sm leading-relaxed mb-6 max-w-[600px]" style={{ color: '#7B79A0' }}>
                     Tonye Apiafi is a PMP-certified project manager and civil engineering professional who has operated in GTA construction for over a decade. He serves as Project Manager and Operational Strategy Leader at Lloyd HVAC Services — a full-service mechanical contractor serving municipal, federal, and institutional clients across Ontario. He built Intzich because he knows exactly what growing construction businesses need — and what most advisors miss.
                   </p>
                   <Link
@@ -443,7 +443,7 @@ export default function Home() {
                     className="inline-block px-5 py-2.5 rounded-lg text-sm font-semibold no-underline transition-all"
                     style={{
                       border: '1px solid rgba(83,74,183,0.3)',
-                      color: '#A8A4F0',
+                      color: '#534AB7',
                     }}
                   >
                     Meet Tonye →
@@ -456,12 +456,12 @@ export default function Home() {
       </section>
 
       {/* ── CLOSING CTA ── */}
-      <section className="py-24 px-6 text-center relative overflow-hidden" style={{ background: '#0D0B26' }}>
+      <section className="py-24 px-6 text-center relative overflow-hidden" style={{ background: '#F6F5FF' }}>
         <div
           className="absolute rounded-full pointer-events-none"
           style={{
             width: '600px', height: '300px',
-            background: 'radial-gradient(ellipse, rgba(83,74,183,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(83,74,183,0.08) 0%, transparent 70%)',
             top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)',
             filter: 'blur(60px)',
@@ -472,11 +472,11 @@ export default function Home() {
             <p className="text-sm font-medium uppercase tracking-widest mb-5" style={{ color: '#534AB7' }}>
               Ready to start
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-5" style={{ color: '#F2F0FC' }}>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-5" style={{ color: '#0D0B26' }}>
               Ready to build
               <span className="gradient-text"> something real?</span>
             </h2>
-            <p className="mb-8" style={{ color: '#9490B8' }}>
+            <p className="mb-8" style={{ color: '#7B79A0' }}>
               Start with a complimentary 45-minute Strategy Session. No pitch. No pressure. Just an honest conversation about your business.
             </p>
             <Link
@@ -486,7 +486,7 @@ export default function Home() {
             >
               Book Your Complimentary Session
             </Link>
-            <p className="text-xs mt-4" style={{ color: '#4A4868' }}>
+            <p className="text-xs mt-4" style={{ color: '#7B79A0' }}>
               Complimentary for qualifying Ontario businesses.
             </p>
           </ScrollReveal>
