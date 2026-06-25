@@ -15,7 +15,7 @@ export default function Footer() {
               style={{ filter: 'brightness(0) invert(1)' }}
             />
             <p className="text-sm leading-relaxed max-w-[280px]" style={{ color: '#9490B8' }}>
-              Strategy and digital advisory for businesses in construction, trades, and professional services across Ontario.
+              Strategy and digital advisory for businesses and professional services.
             </p>
             <a
               href="https://www.linkedin.com/company/intzich"
