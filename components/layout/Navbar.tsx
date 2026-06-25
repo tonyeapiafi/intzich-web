@@ -33,14 +33,14 @@ export default function Navbar() {
         boxShadow: scrolled ? '0 2px 20px rgba(83,74,183,0.06)' : 'none',
       }}
     >
-      <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-6 h-18 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 no-underline flex-shrink-0">
           <img
             src="https://res.cloudinary.com/dx9fyjudj/image/upload/v1755463446/intzich_logoo-22_1_hcgayw_gaqe7q.svg"
             alt="Intzich"
-            className="h-7 w-auto"
+            className="h-12 sm:h-14 w-auto"
             style={{ filter: 'brightness(0) saturate(100%) invert(15%) sepia(40%) saturate(600%) hue-rotate(220deg) brightness(80%)' }}
           />
         </Link>
