@@ -36,16 +36,16 @@ export default function About() {
               </div>
               <h2 className="text-xl font-bold mb-1" style={{ color: '#26215C' }}>Tonye Apiafi, PMP</h2>
               <p className="text-sm text-[#888780]">Founder, Intzich</p>
-              <p className="text-sm text-[#888780]">Principal, Lloyd HVAC Services</p>
+              <p className="text-sm text-[#888780]">Project Manager & Operational Strategy Leader, Lloyd HVAC Services</p>
             </div>
 
             {/* Bio */}
             <div className="md:col-span-2 flex flex-col gap-5">
               <p className="text-[#444441] leading-relaxed">
-                Tonye is a civil engineering professional and PMP-certified project manager with over a decade of experience in GTA construction, mechanical contracting, and project delivery. He founded and operates Lloyd HVAC Services Inc. — a full-service HVAC and mechanical contractor working across municipal, federal, institutional, and commercial sectors in Ontario.
+                Tonye is a civil engineering professional and PMP-certified project manager with over a decade of experience in GTA construction, mechanical contracting, and project delivery. He serves as Project Manager and Operational Strategy Leader at Lloyd HVAC Services Inc. — a full-service HVAC and mechanical contractor working across municipal, federal, institutional, and commercial sectors in Ontario.
               </p>
               <p className="text-[#444441] leading-relaxed">
-                Running a trades business gave Tonye a front-row seat to the challenges that most advisors never see: cash flow pressure on multi-month projects, the complexity of municipal and DND tendering, the margin squeeze of competitive bidding, and the difficulty of building a team that doesn&apos;t depend on you to answer every question. He built Intzich to solve those exact problems — for other businesses like his.
+                Working inside a trades business at the operational level gave Tonye a front-row seat to the challenges that most advisors never see: cash flow pressure on multi-month projects, the complexity of municipal and DND tendering, the margin squeeze of competitive bidding, and the difficulty of building a team that operates without depending on one person for every decision. He built Intzich to solve those exact problems — for other businesses like his.
               </p>
               <p className="text-[#444441] leading-relaxed">
                 Intzich is his answer to a gap he saw clearly: world-class strategic thinking, combined with real digital capability, made accessible to the businesses that need it most.
@@ -115,7 +115,7 @@ export default function About() {
               },
               {
                 name: 'Lloyd HVAC Services',
-                desc: 'Our sister company and one of Ontario\'s leading mechanical subcontractors. Serving GTA, Mississauga, Pickering, Peterborough, Waterloo Region, and CFB Borden.',
+                desc: 'Our sister company and one of Ontario\'s leading mechanical subcontractors. Tonye serves as Project Manager and Operational Strategy Leader, driving project delivery across GTA, Mississauga, Pickering, Peterborough, Waterloo Region, and CFB Borden.',
                 link: 'https://lloydhvac.ca',
                 linkLabel: 'Visit lloydhvac.ca ↗',
                 color: '#633806',

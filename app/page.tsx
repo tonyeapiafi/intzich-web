@@ -275,7 +275,7 @@ export default function Home() {
                 Built by someone who has lived your world.
               </p>
               <p className="text-[#CECBF6] text-sm leading-relaxed mb-6 max-w-[600px]">
-                Tonye Apiafi is a PMP-certified project manager and civil engineering professional who has operated in GTA construction for over a decade. He founded and runs Lloyd HVAC Services — a full-service mechanical contractor serving municipal, federal, and institutional clients across Ontario. He built Intzich because he knows exactly what growing construction businesses need — and what most advisors miss.
+                Tonye Apiafi is a PMP-certified project manager and civil engineering professional who has operated in GTA construction for over a decade. He serves as Project Manager and Operational Strategy Leader at Lloyd HVAC Services — a full-service mechanical contractor serving municipal, federal, and institutional clients across Ontario. He built Intzich because he knows exactly what growing construction businesses need — and what most advisors miss.
               </p>
               <Link
                 href="/about"
